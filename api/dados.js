@@ -1,4 +1,6 @@
-export default async function handler(req, res) {
+const fetch = require('node-fetch');
+
+module.exports = async function handler(req, res) {
   try {
     const response = await fetch('https://script.google.com/macros/s/AKfycbw8poh-GcRLNHBncQldglDtReKet8bTnNxsYSti_OiJ4iYGNYU-kJJJnfMFccYg-4SW/exec');
 
@@ -8,11 +10,9 @@ export default async function handler(req, res) {
 
     const data = await response.json();
 
-    // Resolvendo CORS
     res.setHeader('Access-Control-Allow-Origin', '*');
-    
     res.status(200).json(data);
   } catch (err) {
     res.status(500).json({ error: 'Erro interno', details: err.message });
   }
-}
+};

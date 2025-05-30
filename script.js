@@ -45,3 +45,4 @@ fetch('/api/dados')
     container.appendChild(tabela);
   })
   .catch(error => console.error('Erro ao carregar os dados:', error));
+
