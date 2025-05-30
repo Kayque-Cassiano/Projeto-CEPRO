@@ -26,10 +26,6 @@ fetch('/api/dados')
 
       for (let j = 0; j < colunas; j++) {
         const td = document.createElement('td');
-        td.style.border = '1px solid #000';
-        td.style.padding = '4px';
-        td.style.textAlign = 'center';
-
         const index = i * colunas + j;
 
         if (index < totalDados) {
@@ -38,8 +34,8 @@ fetch('/api/dados')
 
           // Se status for "Indisponivel" pinta o fundo de vermelho
           if (item.status.toLowerCase() === 'indisponivel') {
-            td.style.backgroundColor = ''; // vermelho forte
-            td.style.color = 'white'; // texto branco para contraste
+            td.style.backgroundColor = '#ff8b2d';
+            td.style.color = 'black'; // texto branco para contraste
           }
         } else {
           td.textContent = '-';
