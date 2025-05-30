@@ -13,7 +13,7 @@ fetch('/api/dados')
 
     const tabela = document.createElement('table');
     tabela.style.borderCollapse = 'collapse';
-    tabela.style.width = '100%';
+    tabela.style.width = '80%';
 
     const tbody = document.createElement('tbody');
 
@@ -35,6 +35,12 @@ fetch('/api/dados')
         if (index < totalDados) {
           const item = data[index];
           td.textContent = `${item.numero} - ${item.status}`;
+
+          // Se status for "Indisponivel" pinta o fundo de vermelho
+          if (item.status.toLowerCase() === 'indisponivel') {
+            td.style.backgroundColor = '#f44336'; // vermelho forte
+            td.style.color = 'white'; // texto branco para contraste
+          }
         } else {
           td.textContent = '-';
         }
