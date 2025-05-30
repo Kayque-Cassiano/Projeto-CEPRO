@@ -30,7 +30,7 @@ fetch('/api/dados')
 
         if (index < totalDados) {
           const item = data[index];
-          td.textContent = `${item.numero} - ${item.status}`;
+          td.textContent = `${item.numero} ${item.status}`;
 
           // Se status for "Indisponivel" pinta o fundo de vermelho
           if (item.status.toLowerCase() === 'indisponivel') {
