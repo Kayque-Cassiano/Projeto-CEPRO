@@ -38,7 +38,7 @@ fetch('/api/dados')
 
           // Se status for "Indisponivel" pinta o fundo de vermelho
           if (item.status.toLowerCase() === 'indisponivel') {
-            td.style.backgroundColor = '#f44336'; // vermelho forte
+            td.style.backgroundColor = ''; // vermelho forte
             td.style.color = 'white'; // texto branco para contraste
           }
         } else {
