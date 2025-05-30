@@ -1,8 +1,9 @@
 const URL = 'https://script.google.com/macros/s/AKfycbw8poh-GcRLNHBncQldglDtReKet8bTnNxsYSti_OiJ4iYGNYU-kJJJnfMFccYg-4SW/exec';
 
-fetch(URL)
+fetch('/api/dados')
   .then(response => response.json())
   .then(data => {
+    console.log(data);
     const container = document.getElementById('tabela-container');
     container.innerHTML = '';
 
