@@ -1,0 +1,9 @@
+@import url(styles/global.css);
+@import url(styles/header.css);
+@import url(styles/hero.css);
+
+.container{
+    max-width: 80rem;
+    margin: 0 auto;
+    padding: 4rem 0;
+}

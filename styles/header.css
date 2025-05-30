@@ -1,0 +1,29 @@
+.header {
+    max-width: 80rem;
+    width: 100%;
+    margin: 0 auto;
+    padding: 1rem;
+    border-bottom: 2px solid black;
+}
+
+/* Centralizar a navbar em telas maiores */
+.menu-nav {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    width: 80%;
+    margin: 0 auto;
+}
+
+
+.menu-nav a {
+    color: var(--preto);
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.5s ease;
+
+    &:hover {
+        border-color: black;
+    }
+}
+
+
