@@ -2,7 +2,7 @@ const fetch = require('node-fetch');
 
 module.exports = async function handler(req, res) {
   try {
-    const response = await fetch('https://script.google.com/macros/s/AKfycbz0TxWwPfyrwJ_l6GnSK3jspRKhN2vv_CCCi3OqAFaSX0kbd0qf8e46kT96cKTTMJKi/exec');
+    const response = await fetch('https://script.google.com/macros/s/AKfycbyB_6YhGFGWImn7N7AkNZcngYxHfOJ3BmxhIDisUXhf5CPUEAvS-Fg7-WhF9Vq-j8WG/exec');
 
     if (!response.ok) {
       const errorText = await response.text();

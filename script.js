@@ -1,7 +1,10 @@
-const URL = 'https://script.google.com/macros/s/AKfycbw8poh-GcRLNHBncQldglDtReKet8bTnNxsYSti_OiJ4iYGNYU-kJJJnfMFccYg-4SW/exec';
-
 fetch('/api/dados')
-  .then(response => response.json())
+  .then(response => {
+    if (!response.ok) {
+      throw new Error('Erro na resposta da API');
+    }
+    return response.json();
+  })
   .then(data => {
     console.log(data);
     const container = document.getElementById('tabela-container');
@@ -45,4 +48,3 @@ fetch('/api/dados')
     container.appendChild(tabela);
   })
   .catch(error => console.error('Erro ao carregar os dados:', error));
-
