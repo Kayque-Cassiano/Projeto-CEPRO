@@ -1,4 +1,4 @@
-fetch('https://script.google.com/macros/s/AKfycbwOi8JnLWXAe4oWCDLRYiGeSBEDJWEj2uG1XY8qbNQlFoZ3bsTQe5vUn-yn4knX5ZjY/exec')
+fetch('/api/dados')
   .then(response => {
     if (!response.ok) {
       throw new Error('Erro na resposta da API');
@@ -6,9 +6,10 @@ fetch('https://script.google.com/macros/s/AKfycbwOi8JnLWXAe4oWCDLRYiGeSBEDJWEj2u
     return response.json();
   })
   .then(data => {
-    console.log(data);
+    console.log('Dados recebidos:', data);
+
     const container = document.getElementById('tabela-container');
-    container.innerHTML = '';
+    container.innerHTML = '';  // Limpa conteúdo anterior
 
     const tabela = document.createElement('table');
     tabela.style.borderCollapse = 'collapse';
@@ -46,5 +47,10 @@ fetch('https://script.google.com/macros/s/AKfycbwOi8JnLWXAe4oWCDLRYiGeSBEDJWEj2u
 
     tabela.appendChild(tbody);
     container.appendChild(tabela);
+
   })
-  .catch(error => console.error('Erro ao carregar os dados:', error));
+  .catch(error => {
+    console.error('Erro ao carregar os dados:', error);
+    const container = document.getElementById('tabela-container');
+    container.innerHTML = '<p style="color:red;">Erro ao carregar os dados.</p>';
+  });

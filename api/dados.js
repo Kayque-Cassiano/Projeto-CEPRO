@@ -13,7 +13,13 @@ module.exports = async function handler(req, res) {
       return res.status(500).json({ error: 'Erro ao buscar dados do Google Apps Script', detalhes: text });
     }
 
-    const data = JSON.parse(text);  // Usando parse para debugar
+    let data;
+    try {
+      data = JSON.parse(text);
+    } catch (jsonErr) {
+      console.error('Erro ao fazer parse do JSON:', jsonErr);
+      return res.status(500).json({ error: 'Resposta não é JSON válido', detalhes: text });
+    }
 
     res.setHeader('Access-Control-Allow-Origin', '*');
     res.status(200).json(data);
