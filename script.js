@@ -1,4 +1,4 @@
-fetch('/api/dados')
+fetch('https://script.google.com/macros/s/AKfycbwOi8JnLWXAe4oWCDLRYiGeSBEDJWEj2uG1XY8qbNQlFoZ3bsTQe5vUn-yn4knX5ZjY/exec')
   .then(response => {
     if (!response.ok) {
       throw new Error('Erro na resposta da API');
