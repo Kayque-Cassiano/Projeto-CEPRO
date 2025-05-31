@@ -33,7 +33,7 @@ fetch('/api/dados')
           td.textContent = `${item.numero} ${item.status}`;
 
           // Se status for "Indisponivel" pinta o fundo de vermelho
-          if (item.status.toLowerCase() === 'indisponivel') {
+          if (item.status.toLowerCase() === 'indisponível') {
             td.style.backgroundColor = '#ff8b2d';
             td.style.color = 'black'; // texto branco para contraste
           }
