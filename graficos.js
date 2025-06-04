@@ -1,20 +1,32 @@
 fetch('/api/respostas')
   .then(res => res.json())
   .then(data => {
-    // Processa os dados
+    if (!Array.isArray(data)) {
+      console.error('Dados não são um array:', data);
+      return;
+    }
+
     const porVendedor = {};
     const comprovante = { Sim: 0, Não: 0 };
     const porData = {};
 
     data.forEach(item => {
-      const vendedor = item['quem vendeu'];
-      const comp = item['tem comprovante?'].toLowerCase();
-      const dataHora = new Date(item['data e hora']).toLocaleDateString();
+      const vendedor = item['quem vendeu'] || 'Desconhecido';
+      const comp = (item['tem comprovante?'] || '').toLowerCase();
+      const dataHoraRaw = item['data e hora'] || '';
+      let dataHora;
+
+      try {
+        dataHora = new Date(dataHoraRaw).toLocaleDateString();
+      } catch (e) {
+        console.warn('Data inválida:', dataHoraRaw);
+        dataHora = 'Data inválida';
+      }
 
       // Vendas por vendedor
       porVendedor[vendedor] = (porVendedor[vendedor] || 0) + 1;
 
-      // Comprovante
+      // Comprovante Sim/Não
       if (comp.includes('sim')) comprovante.Sim++;
       else comprovante.Não++;
 
@@ -32,6 +44,9 @@ fetch('/api/respostas')
           data: Object.values(porVendedor),
           backgroundColor: 'rgba(54, 162, 235, 0.7)'
         }]
+      },
+      options: {
+        responsive: true
       }
     });
 
@@ -44,6 +59,9 @@ fetch('/api/respostas')
           data: [comprovante.Sim, comprovante.Não],
           backgroundColor: ['rgba(75, 192, 192, 0.7)', 'rgba(255, 99, 132, 0.7)']
         }]
+      },
+      options: {
+        responsive: true
       }
     });
 
@@ -58,6 +76,9 @@ fetch('/api/respostas')
           fill: false,
           borderColor: 'rgba(153, 102, 255, 0.7)'
         }]
+      },
+      options: {
+        responsive: true
       }
     });
   })
