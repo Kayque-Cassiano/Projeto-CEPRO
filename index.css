@@ -1,6 +1,7 @@
 @import url(styles/global.css);
 @import url(styles/header.css);
 @import url(styles/hero.css);
+@import url(styles/footer.css);
 
 .container{
     max-width: 80rem;

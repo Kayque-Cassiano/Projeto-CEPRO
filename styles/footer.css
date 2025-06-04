@@ -1,0 +1,31 @@
+.rodape {
+    max-width: 80rem;
+    width: 100%;
+    margin: 0 auto;
+    padding: 1.25rem 2rem;
+    border-top: 2px solid var(--laranja);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-info {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    font-size: 0.75rem;
+}
+
+.links {
+    >button {
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+        position: relative;
+    }
+}
+
+.instagram{
+    width: 3rem;
+}
