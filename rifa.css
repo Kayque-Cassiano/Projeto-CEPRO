@@ -1,3 +1,38 @@
 @import url(styles/global.css);
 @import url(styles/header.css);
 @import url(styles/table.css);
+
+.titulo {
+    text-align: center;
+    margin-top: 2rem;
+    font-size: 2rem;
+    color: #333;
+}
+
+.tabela-container {
+    display: flex;
+    justify-content: center;
+    margin: 2rem auto;
+    padding: 1rem;
+    max-width: 1000px;
+    overflow-x: auto;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+td {
+    border: 1px solid #ccc;
+    padding: 0.5rem;
+    text-align: center;
+    font-weight: bold;
+}
+
+td.indisponivel {
+    background-color: #ff8b2d;
+    color: black;
+}

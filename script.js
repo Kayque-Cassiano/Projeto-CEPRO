@@ -6,15 +6,10 @@ fetch('/api/dados')
     return response.json();
   })
   .then(data => {
-    console.log('Dados recebidos:', data);
-
     const container = document.getElementById('tabela-container');
-    container.innerHTML = '';  // Limpa conteúdo anterior
+    container.innerHTML = '';
 
     const tabela = document.createElement('table');
-    tabela.style.borderCollapse = 'collapse';
-    tabela.style.width = '80%';
-
     const tbody = document.createElement('tbody');
 
     const totalDados = data.length;
@@ -32,10 +27,8 @@ fetch('/api/dados')
           const item = data[index];
           td.textContent = `${item.numero} ${item.status}`;
 
-          // Se status for "Indisponivel" pinta o fundo de vermelho
           if (item.status.toLowerCase() === 'indisponível') {
-            td.style.backgroundColor = '#ff8b2d';
-            td.style.color = 'black'; // texto branco para contraste
+            td.classList.add('indisponivel');
           }
         } else {
           td.textContent = '-';
@@ -49,7 +42,6 @@ fetch('/api/dados')
 
     tabela.appendChild(tbody);
     container.appendChild(tabela);
-
   })
   .catch(error => {
     console.error('Erro ao carregar os dados:', error);

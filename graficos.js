@@ -42,24 +42,9 @@ fetch('/api/respostas')
       }
     });
 
-    // Gráfico 2: Comprovante Sim/Não
-    new Chart(document.getElementById('comprovanteSimNao'), {
-      type: 'pie',
-      data: {
-        labels: ['Sim', 'Não'],
-        datasets: [{
-          data: [comprovante.Sim, comprovante.Não],
-          backgroundColor: ['rgba(75, 192, 192, 0.7)', 'rgba(255, 99, 132, 0.7)']
-        }]
-      },
-      options: {
-        responsive: true
-      }
-    });
-
     // Gráfico 3: Compradores
     new Chart(document.getElementById('compradores'), {
-      type: 'bar',
+      type: 'pie',
       data: {
         labels: Object.keys(porComprador),
         datasets: [{
