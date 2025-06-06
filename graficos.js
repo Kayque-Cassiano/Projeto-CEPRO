@@ -8,20 +8,12 @@ fetch('/api/respostas')
 
     const porVendedor = {};
     const comprovante = { Sim: 0, Não: 0 };
-    const porData = {};
+    const porComprador = {};
 
     data.forEach(item => {
       const vendedor = item['quem vendeu'] || 'Desconhecido';
       const comp = (item['tem comprovante?'] || '').toLowerCase();
-      const dataHoraRaw = item['data e hora'] || '';
-      let dataHora;
-
-      try {
-        dataHora = new Date(dataHoraRaw).toLocaleDateString();
-      } catch (e) {
-        console.warn('Data inválida:', dataHoraRaw);
-        dataHora = 'Data inválida';
-      }
+      const comprador = item['quem comprou'] || 'Não informado';
 
       // Vendas por vendedor
       porVendedor[vendedor] = (porVendedor[vendedor] || 0) + 1;
@@ -30,8 +22,8 @@ fetch('/api/respostas')
       if (comp.includes('sim')) comprovante.Sim++;
       else comprovante.Não++;
 
-      // Vendas por data
-      porData[dataHora] = (porData[dataHora] || 0) + 1;
+      // Vendas por comprador
+      porComprador[comprador] = (porComprador[comprador] || 0) + 1;
     });
 
     // Gráfico 1: Vendas por vendedor
@@ -65,21 +57,24 @@ fetch('/api/respostas')
       }
     });
 
-    // Gráfico 3: Vendas por data
-    new Chart(document.getElementById('vendasPorData'), {
-      type: 'line',
+    // Gráfico 3: Compradores
+    new Chart(document.getElementById('compradores'), {
+      type: 'bar',
       data: {
-        labels: Object.keys(porData),
+        labels: Object.keys(porComprador),
         datasets: [{
-          label: 'Vendas',
-          data: Object.values(porData),
-          fill: false,
-          borderColor: 'rgba(153, 102, 255, 0.7)'
+          label: 'Quantidade de Compras',
+          data: Object.values(porComprador),
+          backgroundColor: 'rgba(255, 159, 64, 0.7)'
         }]
       },
       options: {
-        responsive: true
+        responsive: true,
+        plugins: {
+          legend: { display: false }
+        }
       }
     });
+
   })
   .catch(err => console.error('Erro ao carregar dados:', err));

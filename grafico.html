@@ -1,18 +1,66 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Gráficos de Respostas</title>
+  <link rel="stylesheet" href="grafico.css">
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
-<body>
-  <h1>Dashboard de Respostas</h1>
 
-  <canvas id="vendasPorVendedor"></canvas>
-  <canvas id="comprovanteSimNao"></canvas>
-  <canvas id="vendasPorData"></canvas>
+<body>
+  <header class="header">
+    <nav class="menu-nav">
+      <a class="links" href="index.html">Início</a>
+      <a class="links" href="grafico.html">Gráfico</a>
+      <a class="links" href="rifa.html" target="_self">Rifa</a>
+      <a class="links" href="#"></a>
+    </nav>
+  </header>
+
+  <div class="graficos">
+    <h1>Dashboard de Respostas</h1>
+
+    <div class="card">
+      <h2>Vendas por Vendedor</h2>
+      <canvas id="vendasPorVendedor"></canvas>
+    </div>
+
+    <div class="card">
+      <h2>Comprovante: Sim ou Não</h2>
+      <canvas id="comprovanteSimNao"></canvas>
+    </div>
+
+    <div class="card">
+      <h2>Compradores</h2>
+      <canvas id="compradores"></canvas>
+    </div>
+
+  </div>
+
+  <footer class="rodape">
+    <div class="footer-info">
+      <h1>
+        CEPRO Turma 3 de Sexta
+      </h1>
+      <p>
+        De uma olhada em nosso instagram e acompanhe as atualizaões até o final do projeto!
+      </p>
+    </div>
+
+    <div class="links">
+      <button>
+        <a target="_blank"
+          href="https://www.instagram.com/projetouniaoosolidaria/profilecard/?igsh=MXB4Z3ZjeXdxeTBiOQ==">
+          <img class="instagram" src="assets/icons/instagram.svg" alt="">
+        </a>
+      </button>
+    </div>
+
+  </footer>
 
   <script src="graficos.js"></script>
 </body>
+
 </html>

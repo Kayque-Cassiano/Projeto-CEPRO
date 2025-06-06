@@ -1,0 +1,40 @@
+@import url(styles/global.css);
+@import url(styles/header.css);
+@import url(styles/footer.css);
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f5f6fa;
+  margin: 0;
+  padding: 0;
+}
+
+.graficos {
+  padding: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.graficos h1 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.card {
+  background-color: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  padding: 2rem;
+  margin-bottom: 2rem;
+}
+
+.card h2 {
+  margin-bottom: 1.5rem;
+  font-size: 1.2rem;
+  color: #333;
+}
+
+canvas {
+  width: 100% !important;
+  height: auto !important;
+}
