@@ -41,6 +41,10 @@
     &:hover {
         opacity: 0.9;
     }
+
+    & a{
+        color: var(--branco);
+    }
 }
 
 .img.container {
@@ -82,7 +86,6 @@
         text-align: left;
         transition: opacity 0.5s ease-out;
         font-size: 1rem;
-        font-weight: 600;
         transition: 0.8s;
 
         &:hover {
@@ -95,6 +98,5 @@
 
 .benefits-card button a {
     color: var(--branco);
-    text-decoration: none;
     cursor: pointer;
 }

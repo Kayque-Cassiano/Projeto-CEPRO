@@ -1,20 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Poppins&display=swap');
 
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     text-decoration: none;
 }
 
-:root{
+:root {
     --azul: #bac9ff;
     --laranja: #ff8b2d;
     --shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
     --branco: #ffffff;
 }
 
-html{
+html {
     font-family: "Montserrat", sans-serif;
     font-weight: 400;
 }
