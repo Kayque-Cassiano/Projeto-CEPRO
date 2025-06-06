@@ -1,6 +1,7 @@
 @import url(styles/global.css);
 @import url(styles/header.css);
 @import url(styles/table.css);
+@import url(styles/footer.css);
 
 .titulo {
     text-align: center;
@@ -15,7 +16,6 @@
     margin: 2rem auto;
     padding: 1rem;
     max-width: 1000px;
-    overflow-x: auto;
 }
 
 table {
