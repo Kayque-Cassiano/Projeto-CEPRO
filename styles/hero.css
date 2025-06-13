@@ -72,13 +72,11 @@
 }
 
 .benefits-card {
-    flex: 1;
     display: flex;
-    gap: 1rem;
     color: var(--branco);
 
     & button {
-        width: fit-content;
+        width: 100%;
         border: none;
         background-color: var(--azul);
         padding: 20px 30px;

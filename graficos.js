@@ -44,7 +44,7 @@ fetch('/api/respostas')
 
     // Gráfico 3: Compradores
     new Chart(document.getElementById('compradores'), {
-      type: 'pie',
+      type: 'doughnut',
       data: {
         labels: Object.keys(porComprador),
         datasets: [{

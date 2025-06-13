@@ -2,6 +2,7 @@
 @import url(styles/header.css);
 @import url(styles/table.css);
 @import url(styles/footer.css);
+@import url(styles/media.css);
 
 .titulo {
     text-align: center;
@@ -11,16 +12,19 @@
 }
 
 .tabela-container {
-    display: flex;
-    justify-content: center;
+    display: block;
+    width: 100%;
+    max-width: 1000px;
     margin: 2rem auto;
     padding: 1rem;
-    max-width: 1000px;
+    overflow-x: auto; /* Permite rolagem horizontal em telas pequenas */
+    box-sizing: border-box;
 }
 
 table {
-    border-collapse: collapse;
     width: 100%;
+    min-width: 400px; /* Garante largura mínima para não quebrar */
+    border-collapse: collapse;
     background-color: white;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
