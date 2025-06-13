@@ -1,6 +1,7 @@
 @import url(styles/global.css);
 @import url(styles/header.css);
 @import url(styles/footer.css);
+@import url(styles/media.css);
 
 .sobre-nos {
     width: 80%;
